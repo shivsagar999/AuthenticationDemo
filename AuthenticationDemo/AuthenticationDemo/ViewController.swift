@@ -9,9 +9,21 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    
+    @IBOutlet weak var loginButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+//        emailTextField.layer.cornerRadius = 20
+//        emailTextField.layer.borderWidth = 1.0
+//        emailTextField.layer.borderColor = UIColor.gray.cgColor
+//
+//        passwordTextField.layer.cornerRadius = 20
+//        passwordTextField.layer.borderWidth = 1.0
+//        passwordTextField.layer.borderColor = UIColor.gray.cgColor
     }
 
 
