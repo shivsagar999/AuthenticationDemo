@@ -22,7 +22,14 @@ class RegisterViewController: UIViewController {
     
 
     @IBAction func createAccountButtonPressed(_ sender: UIButton) {
+        self.errorLabel.isHidden = true
         Auth.auth().createUser(withEmail: emailTextField.text ?? "", password: passwordTextField.text ?? "") { authResult, error in
+            
+            if error != nil {
+                self.errorLabel.isHidden = false
+                return
+            }
+            
             let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "UserInfoViewController") as! UserInfoViewController
             DispatchQueue.main.async {
                 self.present(vc, animated: true)
