@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class LoginViewController: UIViewController {
 
     
     @IBOutlet weak var emailTextField: UITextField!
@@ -25,7 +25,10 @@ class ViewController: UIViewController {
 //        passwordTextField.layer.borderWidth = 1.0
 //        passwordTextField.layer.borderColor = UIColor.gray.cgColor
     }
-
-
+    
+    
+    @IBAction func loginButtonPressed(_ sender: UIButton) {
+    }
+    
 }
 
