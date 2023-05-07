@@ -16,17 +16,20 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    @IBOutlet weak var emailVerificationLabel: UILabel!
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var loginButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.emailVerificationLabel.isHidden = true
     }
     
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {
         activityIndicator.isHidden = false
+        self.emailVerificationLabel.isHidden = true
         errorLabel.isHidden = true
         Auth.auth().signIn(withEmail: emailTextField.text ?? "", password: passwordTextField.text ?? "") { [weak self] authResult, error in
           guard let self = self else { return }
@@ -40,7 +43,12 @@ class LoginViewController: UIViewController {
                 self.errorLabel.isHidden = false
                 return
             }
-
+            
+            if !authResult.user.isEmailVerified {
+                  self.emailVerificationLabel.isHidden = false
+                  return
+              }
+          
             UserData.shared.userUID = authResult.user.uid
             let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "UserInfoViewController") as! UserInfoViewController
             DispatchQueue.main.async {

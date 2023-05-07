@@ -47,12 +47,15 @@ class RegisterViewController: UIViewController {
             }
             
             UserData.shared.userUID = authResult.user.uid
-            
             self.ref.child("users").child(authResult.user.uid).setValue(["email": email])
-            
-            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "UserInfoViewController") as! UserInfoViewController
-            DispatchQueue.main.async {
-                self.present(vc, animated: true)
+            authResult.user.sendEmailVerification { rror in
+                if error != nil {
+                    self.errorLabel.isHidden = false
+                    return
+                } else {
+                    _ = self.navigationController?.popViewController(animated: true)
+                }
+                
             }
         }
     }

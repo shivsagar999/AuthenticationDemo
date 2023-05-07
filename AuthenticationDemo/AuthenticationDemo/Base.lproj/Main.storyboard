@@ -121,7 +121,7 @@
                                 <rect key="frame" x="0.0" y="92" width="414" height="770"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="52" translatesAutoresizingMaskIntoConstraints="NO" id="I5b-A8-2nu">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="468"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="546.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zRf-GU-YfG">
                                                 <rect key="frame" x="87" y="0.0" width="240" height="40"/>
@@ -178,9 +178,15 @@
                                                 </connections>
                                             </button>
                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Could not create the account try again" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SNc-b6-iFQ">
-                                                <rect key="frame" x="11.5" y="468" width="391" height="0.0"/>
+                                                <rect key="frame" x="11.5" y="494" width="391" height="0.0"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                                 <color key="textColor" systemColor="systemRedColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please verify your email before login" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zMI-Fc-zN4">
+                                                <rect key="frame" x="23" y="520" width="368.5" height="26.5"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                                <color key="textColor" systemColor="systemGreenColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -225,6 +231,7 @@
                     <connections>
                         <outlet property="activityIndicator" destination="9Mh-s0-7eg" id="g13-YV-wsX"/>
                         <outlet property="emailTextField" destination="SWQ-fC-via" id="kPR-Xu-Wej"/>
+                        <outlet property="emailVerificationLabel" destination="zMI-Fc-zN4" id="eDk-Lz-Gzc"/>
                         <outlet property="errorLabel" destination="SNc-b6-iFQ" id="dIH-J8-RKV"/>
                         <outlet property="loginButton" destination="PIs-su-Gyd" id="ATO-va-Jnd"/>
                         <outlet property="passwordTextField" destination="ezF-7E-JIg" id="8za-gJ-HuA"/>
@@ -283,6 +290,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
