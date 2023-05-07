@@ -17,6 +17,7 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     var ref: DatabaseReference!
 
     
@@ -29,9 +30,12 @@ class RegisterViewController: UIViewController {
     
 
     @IBAction func createAccountButtonPressed(_ sender: UIButton) {
+        activityIndicator.isHidden = false
         self.errorLabel.isHidden = true
         var email = emailTextField.text ?? ""
         Auth.auth().createUser(withEmail: emailTextField.text ?? "", password: passwordTextField.text ?? "") { authResult, error in
+            
+            self.activityIndicator.isHidden = true
             
             if error != nil {
                 self.errorLabel.isHidden = false
