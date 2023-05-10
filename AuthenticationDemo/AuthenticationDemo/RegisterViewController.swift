@@ -19,12 +19,16 @@ class RegisterViewController: UIViewController {
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     var ref: DatabaseReference!
-
+    var auth: Auth!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        ref = Database.database().reference()
+        //ref = Database.database().reference()
+        ref = Database.database(url: "http://127.0.0.1:9000/?ns=autheticationdemo-78169").reference()
+        auth = Auth.auth()
+        //local emulator connection
+        auth.useEmulator(withHost: "localhost", port: 9099)
         // Do any additional setup after loading the view.
     }
     
@@ -33,7 +37,7 @@ class RegisterViewController: UIViewController {
         activityIndicator.isHidden = false
         self.errorLabel.isHidden = true
         var email = emailTextField.text ?? ""
-        Auth.auth().createUser(withEmail: emailTextField.text ?? "", password: passwordTextField.text ?? "") { authResult, error in
+        auth.createUser(withEmail: emailTextField.text ?? "", password: passwordTextField.text ?? "") { authResult, error in
             
             self.activityIndicator.isHidden = true
             

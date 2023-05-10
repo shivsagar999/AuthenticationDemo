@@ -21,9 +21,14 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var loginButton: UIButton!
     
+    var auth: Auth!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.emailVerificationLabel.isHidden = true
+        auth = Auth.auth()
+        //Local emulator connection
+        auth.useEmulator(withHost: "localhost", port: 9099)
+        //self.emailVerificationLabel.isHidden = true
     }
     
     
@@ -31,7 +36,7 @@ class LoginViewController: UIViewController {
         activityIndicator.isHidden = false
         self.emailVerificationLabel.isHidden = true
         errorLabel.isHidden = true
-        Auth.auth().signIn(withEmail: emailTextField.text ?? "", password: passwordTextField.text ?? "") { [weak self] authResult, error in
+        auth.signIn(withEmail: emailTextField.text ?? "", password: passwordTextField.text ?? "") { [weak self] authResult, error in
           guard let self = self else { return }
             self.activityIndicator.isHidden = true
             if error != nil {
