@@ -268,6 +268,49 @@
             </objects>
             <point key="canvasLocation" x="1527.4809160305342" y="-7.042253521126761"/>
         </scene>
+        <!--Forgot Password View Controller-->
+        <scene sceneID="VZ6-UJ-qpR">
+            <objects>
+                <viewController id="ydB-U2-EIo" customClass="ForgotPasswordViewController" customModule="AuthenticationDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ixc-fv-D7o">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vyJ-k6-KiU">
+                                <rect key="frame" x="20" y="430" width="374" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tMy-kl-zmp">
+                                <rect key="frame" x="20" y="546" width="374" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                <connections>
+                                    <action selector="submitPressed:" destination="ydB-U2-EIo" eventType="touchUpInside" id="yGj-QK-d9l"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6iK-9A-YGE"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="tMy-kl-zmp" firstAttribute="leading" secondItem="6iK-9A-YGE" secondAttribute="leading" constant="20" id="0Vx-W7-y6c"/>
+                            <constraint firstItem="vyJ-k6-KiU" firstAttribute="centerX" secondItem="Ixc-fv-D7o" secondAttribute="centerX" id="M8v-9M-YnK"/>
+                            <constraint firstItem="vyJ-k6-KiU" firstAttribute="centerY" secondItem="Ixc-fv-D7o" secondAttribute="centerY" id="ODQ-Mw-TzC"/>
+                            <constraint firstItem="6iK-9A-YGE" firstAttribute="trailing" secondItem="tMy-kl-zmp" secondAttribute="trailing" constant="20" id="Stx-CL-7VW"/>
+                            <constraint firstItem="6iK-9A-YGE" firstAttribute="trailing" secondItem="vyJ-k6-KiU" secondAttribute="trailing" constant="20" id="VGh-fZ-JDb"/>
+                            <constraint firstItem="tMy-kl-zmp" firstAttribute="top" secondItem="vyJ-k6-KiU" secondAttribute="bottom" constant="80" id="X5W-qo-bK0"/>
+                            <constraint firstItem="tMy-kl-zmp" firstAttribute="centerX" secondItem="Ixc-fv-D7o" secondAttribute="centerX" id="cag-Ir-OtN"/>
+                            <constraint firstItem="vyJ-k6-KiU" firstAttribute="leading" secondItem="6iK-9A-YGE" secondAttribute="leading" constant="20" id="kHY-E2-qnC"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="vyJ-k6-KiU" id="2ti-DW-zRf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Enj-7H-mBn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2420" y="10"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="dva-yi-eqa">
             <objects>

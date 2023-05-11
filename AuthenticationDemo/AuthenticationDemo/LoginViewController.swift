@@ -27,7 +27,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         auth = Auth.auth()
         //Local emulator connection
-        auth.useEmulator(withHost: "localhost", port: 9099)
+        //auth.useEmulator(withHost: "localhost", port: 9099)
         //self.emailVerificationLabel.isHidden = true
     }
     
