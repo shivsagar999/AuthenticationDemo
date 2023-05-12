@@ -112,6 +112,7 @@ class LoginViewController: UIViewController {
                         return
                     }
                   var email = authResult.user.email
+                  
                 
                   self.ref.child("users").child(authResult.user.uid).setValue(["email": email])
                   UserData.shared.userUID = authResult.user.uid
