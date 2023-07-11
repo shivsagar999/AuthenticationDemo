@@ -24,11 +24,11 @@ class RegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //ref = Database.database().reference()
-        ref = Database.database(url: "http://127.0.0.1:9000/?ns=autheticationdemo-78169").reference()
+        ref = Database.database().reference()
+        //ref = Database.database(url: "http://127.0.0.1:9000/?ns=autheticationdemo-78169").reference()
         auth = Auth.auth()
         //local emulator connection
-        auth.useEmulator(withHost: "localhost", port: 9099)
+        //auth.useEmulator(withHost: "localhost", port: 9099)
         // Do any additional setup after loading the view.
     }
     
